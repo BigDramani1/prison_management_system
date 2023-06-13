@@ -9,18 +9,11 @@ $response = [];
 
  if(isset($_POST['submit'])){
     if($authControl->Login($_POST)){
-        header('Location: index.php?login=success');
+        header('Location: Dashboard.php');
     }else{
         $response['message'] = "Invalid Credentials";
     }
  }
-
-//Checking for a login in the url 
-if(isset($_GET['login'])){
-    if($_GET['login'] = 'success'){
-        $msg = "Login Successful";
-    }
-}
 
 
 ?>
@@ -60,16 +53,7 @@ if(isset($_GET['login'])){
                                         <?php echo '<li style="text-align:center">'. $response['message'] .'</li>'?>
                                     </div>
                                 <?php endif; ?>
-                                <?php
-                                //Showing a message if any and redirect to the Dashboard after 1.5 secs
-                                if (isset($msg)) {
-                                    echo '<div class="alert alert-success">' .
-                                    '<li style="text-align:center">'.$msg.'</li>'
-                                    . '</div>';
-                                    echo "<script>setTimeout(\"location.href = 'Dashboard.php';\",1500);</script>";
-                                }
-
-                                ?>
+                        
                                
                                
                                 <div class="card-body">
@@ -101,7 +85,7 @@ if(isset($_GET['login'])){
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Eugene Daniels 2020</div>
+                        <div class="text-muted">Copyright &copy; Dramani Alhassan 2020</div>
                         <div>
                             <a href="#">Privacy Policy</a>
                             &middot;
